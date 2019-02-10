@@ -4,7 +4,8 @@ export class  QuotesService{
 
     addQuoteToFavourite(quote:Quote)
     {
-        this.favQuotes.push(quote);
+        this.favQuotes.push(quote);console.log(quote);
+        
     }
 
     removeQuoteFromFavurite(quote:Quote)
@@ -19,4 +20,11 @@ export class  QuotesService{
     {
         return this.favQuotes.slice();    //basically create a copy of array
     }
+
+    isQuoteFavourite(quote:Quote) 
+    {
+         return this.favQuotes.find((quoteEl : Quote)=>{
+             return quoteEl.id==quote.id;
+         })
+     }
 }

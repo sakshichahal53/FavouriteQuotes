@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding> <!--display the individual quotes--> 
+<ion-content padding> <!--display the indivisual quotes--> 
   <ion-card *ngFor="let quote of quoteGroup?.quotes; let i=index"> 
       <ion-card-header>
           #{{i+1}}
@@ -18,8 +18,16 @@
         <button ion-button 
         clear
         small
-        (click)="onAddToFavourite(quote)">Favourite</button>
+        (click)="onAddToFavourite(quote)"
+        *ngIf="!isFavourite(quote)">Favourite</button>
+        <button ion-button 
+        clear
+        small
+        color="danger"
+        (click)="onRemoveFromFavourite(quote)"
+        *ngIf="isFavourite(quote)">Unfavourite</button>
       </ion-col>
     </ion-row>
+    
   </ion-card>
 </ion-content>

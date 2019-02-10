@@ -10,9 +10,10 @@ import { QuotesService } from '../../services/quotes.service';
 })
 export class QuotesPage {
   quoteGroup:{category:string, quotes:Quote,icon:string }
-  quoteService:QuotesService
-  constructor( public navParams: NavParams,
-               private alertCtrl:AlertController) {  
+  constructor( private quoteService:QuotesService,
+     private navParams:NavParams,
+     private alertCtrl:AlertController
+    ) {  
   }
 
   ionViewDidLoad()
@@ -43,5 +44,14 @@ export class QuotesPage {
       }]
      });
      alert.present();
+  }
+
+  onRemoveFromFavourite(quote:Quote)
+  {
+  }
+
+  isFavourite(quote:Quote)
+  {
+     return this.quoteService.isQuoteFavourite(quote)
   }
 }
