@@ -9,10 +9,11 @@ import { LibraryPage } from "../library/library";
        <ion-tab [root]="favouritesPage" tabTitle="Favourites" tabIcon="star"> </ion-tab>
        <ion-tab [root]="libraryPage" tabTitle="Library" tabIcon="book"> </ion-tab>
     </ion-tabs>
-     
     `
 })
 export class TabsPage{
 favouritesPage = FavouritesPage;
 libraryPage = LibraryPage;
 }
+
+//html of this page is inline

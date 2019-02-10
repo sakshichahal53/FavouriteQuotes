@@ -12,7 +12,8 @@ import { QuotesPage } from '../pages/quotes/quotes';
 })
 export class MyApp {
   rootPage:any = TabsPage;
-  tabPage=TabsPage
+  favPage=TabsPage
+  tabPage=TabsPage;
   quotesPage=QuotesPage
   settingsPage=SettingsPage
 
